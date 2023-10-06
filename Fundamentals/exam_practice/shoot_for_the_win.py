@@ -1,3 +1,4 @@
+# 90/100
 targets = input().split()
 command = input()
 shot_targets = 0
