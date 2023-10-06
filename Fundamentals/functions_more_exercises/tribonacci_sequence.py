@@ -18,9 +18,9 @@ number_count = int(input())
 #
 #
 # print(*tribonacci(number_count), sep=" ")
-tribonacci_list = []
-
-
+# tribonacci_list = []
+#
+#
 # def tribonacci(num):
 #     if num == 1:
 #         return 1
