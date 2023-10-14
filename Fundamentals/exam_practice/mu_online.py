@@ -28,8 +28,6 @@ for index, room in enumerate(dungeon_rooms):
                   f"Best room: {index + 1}")
             success = False
             break
-
-
 if success:
     print(f"You've made it!\n"
           f"Bitcoins: {initial_bitcoins}\n"
