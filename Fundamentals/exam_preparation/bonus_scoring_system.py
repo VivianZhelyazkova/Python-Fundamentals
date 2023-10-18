@@ -6,7 +6,7 @@ additional_bonus = int(input())
 max_bonus = 0
 max_attendances = 0
 
-for student in range(1, number_of_students + 1):
+for student in range(number_of_students):
     student_attendances = int(input())
     total_bonus = student_attendances / number_of_lectures * (5 + additional_bonus)
     if total_bonus > max_bonus:
