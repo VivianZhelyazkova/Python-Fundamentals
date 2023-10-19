@@ -1,5 +1,5 @@
-x = 5
-y = 4
+x = int(input())
+y = int(input())
 matrix = []
 number = 1
 for column in range(y):
@@ -10,11 +10,10 @@ for column in range(y):
 
 number = 1
 
-for horizontal in range(x):
-    for vertical in range(y):
-        matrix[vertical][horizontal] = number
+for vertical in range(x):
+    for horizontal in range(y):
+        matrix[horizontal][vertical] = number
         number += 1
 
 for row in matrix:
     print(row)
-    
