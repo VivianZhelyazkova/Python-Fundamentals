@@ -2,17 +2,15 @@ number_of_commands = int(input())
 system = {}
 for command in range(number_of_commands):
     action = input().split()
+    action_type = action[0]
+    username = action[1]
     if "unregister" == action[0]:
-        action_type = action[0]
-        username = action[1]
         if username not in system:
             print(f"ERROR: user {username} not found")
         else:
             print(f"{username} unregistered successfully")
             system.pop(username)
     elif "register" == action[0]:
-        action_type = action[0]
-        username = action[1]
         license_plate_number = action[2]
         if username not in system:
             system[username] = license_plate_number
