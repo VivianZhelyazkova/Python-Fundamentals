@@ -35,4 +35,8 @@ while command != "Lumpawaroo":
             print(f"{name} joins the {side} side!")
     command = input()
 
-print(sides)
+for side, members in sides.items():
+    if len(members) > 0:
+        print(f"Side: {side}, Members: {len(members)}")
+        for member in members:
+            print(f"! {member}")
