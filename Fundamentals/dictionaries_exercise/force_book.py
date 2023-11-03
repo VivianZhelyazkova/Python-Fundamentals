@@ -2,6 +2,22 @@ command = input()
 
 sides = {}
 
+
+def add_or_transfer_user(user, user_side, sides_dict, should_append):
+    found = any(user in value_list for value_list in sides_dict.values())
+    if found:
+        for key, value in sides_dict.items():
+            if user in value:
+                value.remove(user)
+        sides_dict[user_side].append(user)
+    else:
+        if should_append:
+            sides[side].append(name)
+        else:
+            sides_dict[user_side] = [user]
+    print(f"{user} joins the {user_side} side!")
+
+
 while command != "Lumpawaroo":
     if "|" in command:
         side, name = command.split(" | ")
@@ -14,25 +30,10 @@ while command != "Lumpawaroo":
         name, side = command.split(" -> ")
         if side not in sides:
             sides[side] = []
-            found = any(name in value_list for value_list in sides.values())
-            if found:
-                for key, value in sides.items():
-                    if name in value:
-                        value.remove(name)
-                sides[side].append(name)
-            else:
-                sides[side] = [name]
-            print(f"{name} joins the {side} side!")
+            add_or_transfer_user(name, side, sides, False)
         else:
-            found = any(name in value_list for value_list in sides.values())
-            if found:
-                for key, value in sides.items():
-                    if name in value:
-                        value.remove(name)
-                sides[side].append(name)
-            else:
-                sides[side].append(name)
-            print(f"{name} joins the {side} side!")
+            add_or_transfer_user(name, side, sides, True)
+
     command = input()
 
 for side, members in sides.items():
