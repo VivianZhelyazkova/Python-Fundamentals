@@ -10,7 +10,7 @@ while line != "end of contests":
 second_line = input()
 
 submissions = {}
-best_candidate = {}
+# best_candidate = {}
 
 while second_line != "end of submissions":
     contest, password, username, points = second_line.split("=>")
