@@ -20,13 +20,14 @@ while command != "Season end":
             for pos in players[player_one].keys():
                 for p in players[player_two].keys():
                     if pos == p:
-                        if sum(players[player_one].values()) > sum(players[player_two].values()):
+                        total_skill_player_one = sum(players[player_one].values())
+                        total_skill_player_two = sum(players[player_two].values())
+                        if total_skill_player_one > total_skill_player_two:
                             demoted_player = player_two
-                        elif sum(players[player_one].values()) < sum(players[player_two].values()):
+                        elif total_skill_player_one < total_skill_player_two:
                             demoted_player = player_one
             if demoted_player:
                 players.pop(demoted_player)
-
     command = input()
 
 sorted_skills = dict(sorted(players.items(), key=lambda x: (-sum(x[1].values()), x[0])))
