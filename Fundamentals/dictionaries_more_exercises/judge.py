@@ -7,12 +7,10 @@ while line != "no more time":
     points = int(points)
     if contest not in contests:
         contests[contest] = {username: points}
-
     elif username not in contests[contest]:
         contests[contest][username] = points
     elif points > contests[contest][username]:
         contests[contest][username] = points
-
     line = input()
 
 for contest, info in contests.items():
