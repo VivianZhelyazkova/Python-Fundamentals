@@ -21,16 +21,9 @@ for dragon in range(number):
         vivis_dragons[dragon_type][name] = [damage, health, armor]
 
 for dragon_type, info in vivis_dragons.items():
-    average_damage = 0
-    average_health = 0
-    average_armor = 0
-    for name, data in info.items():
-        average_damage += data[0]
-        average_health += data[1]
-        average_armor += data[2]
-    average_damage /= len(vivis_dragons[dragon_type])
-    average_health /= len(vivis_dragons[dragon_type])
-    average_armor /= len(vivis_dragons[dragon_type])
+    average_damage = sum([dragon[0] for dragon in info.values()]) / len(info)
+    average_health = sum([dragon[1] for dragon in info.values()]) / len(info)
+    average_armor = sum([dragon[2] for dragon in info.values()]) / len(info)
     print(f"{dragon_type}::({average_damage:.2f}/{average_health:.2f}/{average_armor:.2f})")
     sorted_names = dict(sorted(vivis_dragons[dragon_type].items(), key=lambda x: x[0]))
     for name, data in sorted_names.items():
