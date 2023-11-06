@@ -4,13 +4,11 @@ results = {}
 submissions = {}
 
 while command != "exam finished":
-
     if "banned" in command:
         name, action = command.split("-")
         del results[name]
         command = input()
         continue
-
     name, language, points = command.split("-")
     points = int(points)
     if name not in results:
