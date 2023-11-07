@@ -10,8 +10,9 @@ while string != "end":
     # reversed_string = "".join(reversed_list)
     # print(f"{string} = {reversed_string}")
 
-    reversed_string = "".join(reversed(string))
-    print(f"{string} = {reversed_string}")
+    # reversed_string = "".join(reversed(string))
+    print(f"{string} = {''.join(reversed(string))}")
+    
     string = input()
 
 
