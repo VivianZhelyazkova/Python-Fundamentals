@@ -2,18 +2,15 @@ number = int(input())
 
 vivis_dragons = {}
 
+#
+# def get_default(value, default):
+#     return int(default) if value == "null" else int(value)
+
+
 for dragon in range(number):
     dragon_type, name, damage, health, armor = input().split()
-
-    if damage == "null":
-        damage = 45
-    if health == "null":
-        health = 250
-    if armor == "null":
-        armor = 10
-    damage = int(damage)
-    health = int(health)
-    armor = int(armor)
+    dragon_default_stats = [45, 250, 10]
+    # damage, health, armor = map(lambda (i, x): get_default(x, dragon_default_stats[i]), enumerate([damage, health, armor]))
 
     if dragon_type not in vivis_dragons:
         vivis_dragons[dragon_type] = {name: [damage, health, armor]}
