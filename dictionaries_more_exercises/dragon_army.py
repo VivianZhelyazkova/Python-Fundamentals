@@ -2,11 +2,6 @@ number = int(input())
 
 vivis_dragons = {}
 
-#
-# def get_default(value, default):
-#     return int(default) if value == "null" else int(value)
-
-
 for dragon in range(number):
     dragon_type, name, damage, health, armor = input().split()
     dragon_default_stats = [45, 250, 10]
