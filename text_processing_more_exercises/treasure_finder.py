@@ -1,9 +1,6 @@
 keys = [int(x) for x in input().split()]
 command = input()
 
-treasure = ""
-coordinates = ""
-
 while command != "find":
     key_index = 0
     decrypted_message = ""
