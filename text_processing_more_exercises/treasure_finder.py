@@ -14,16 +14,16 @@ while command != "find":
     treasure = ""
     coordinates = ""
     treasure_found = False
+    coordinates_found = False
     for char in decrypted_message:
         if treasure_found and char != "&":
             treasure += char
         if char == "&":
             treasure_found = not treasure_found
-    coordinates_found = False
-    for char in decrypted_message:
         if coordinates_found and char != ">":
             coordinates += char
         if char == "<":
             coordinates_found = True
+
     print(f"Found {treasure} at {coordinates}")
     command = input()
