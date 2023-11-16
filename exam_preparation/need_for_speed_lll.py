@@ -24,6 +24,12 @@ while command != "Stop":
     elif "Refuel" in command:
         cdm, car, fuel = command.split(" : ")
         fuel = int(fuel)
+        filled_liters = 75 - obtained_cars[car][1]
+        obtained_cars[car][1] += fuel
+        if obtained_cars[car][1] > 75:
+            obtained_cars[car][1] = 75
+            fuel = filled_liters
+        print(f"{car} refueled with {fuel} liters")
     elif "Revert" in command:
         cmd, car, kilometers = command.split(" : ")
         kilometers = int(kilometers)
