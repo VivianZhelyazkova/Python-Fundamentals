@@ -35,9 +35,10 @@ while event != "End":
         print(f"{gold} gold added to the city treasury. {town} now has {cities[town][1]} gold.")
     event = input()
 
-if len(cities) == 0:
-    print("Ahoy, Captain! All targets have been plundered and destroyed!")
-else:
+if cities:
     print(f"Ahoy, Captain! There are {len(cities)} wealthy settlements to go to: ")
     for city, info in cities.items():
         print(f"{city} -> Population: {info[0]} citizens, Gold: {info[1]} kg")
+
+else:
+    print("Ahoy, Captain! All targets have been plundered and destroyed!")
