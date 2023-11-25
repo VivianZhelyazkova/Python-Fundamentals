@@ -15,7 +15,7 @@ event = input()
 
 while event != "End":
     if "Plunder" in event:
-        evnt, town, people, gold = event.split("=>")
+        town, people, gold = event.split("=>")[1], int(event.split("=>")[2]), int(event.split("=>")[3])
         people = int(people)
         gold = int(gold)
         cities[town][0] -= people
