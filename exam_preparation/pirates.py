@@ -1,7 +1,7 @@
 command = input()
 cities = {}
 while command != "Sail":
-    city, population, gold = command.split("||")[0], command.split("||")[1], command.split("||")[2]
+    city, population, gold = command.split("||")[0], int(command.split("||")[1]), int(command.split("||")[2])
     population = int(population)
     gold = int(gold)
     if city not in cities:
