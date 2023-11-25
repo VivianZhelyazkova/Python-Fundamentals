@@ -22,7 +22,6 @@ while event != "End":
             print(f"{town} has been wiped off the map!")
     elif "Prosper" in event:
         town, gold = event.split("=>")[1],int(event.split("=>")[2])
-        gold = int(gold)
         if gold < 0:
             print("Gold added cannot be a negative number!")
             event = input()
