@@ -41,7 +41,7 @@ while command != "End":
     elif "TakeDamage" in command:
         cmd, name, damage, attacker = command.split(" - ")
         damage = int(damage)
-        if heroes[name][HP] <= damage:
+        if damage >= heroes[name][HP]:
             print(f"{name} has been killed by {attacker}!")
             heroes.pop(name)
         else:
