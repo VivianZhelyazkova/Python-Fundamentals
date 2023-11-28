@@ -14,6 +14,19 @@ for line in range(number_of_heroes):
 
 command = input()
 
+
+def recharge_or_heal(string, my_heroes, command_type, resource):
+    cmd, name, amount = string.split(" - ")
+    amount = int(amount)
+    mp_received = (MAX_MP if resource == MP else MAX_HP) - my_heroes[name][resource]
+    my_heroes[name][resource] += amount
+    if my_heroes[name][resource] > (MAX_MP if resource == MP else MAX_HP):
+        my_heroes[name][resource] = (MAX_MP if resource == MP else MAX_HP)
+        amount = mp_received
+    string_resource = "HP" if resource == HP else "MP"
+    print(f"{name} {command_type} for {amount} {string_resource}!")
+
+
 while command != "End":
 
     if "CastSpell" in command:
@@ -36,24 +49,10 @@ while command != "End":
             print(f"{name} was hit for {damage} HP by {attacker} and now has {heroes[name][HP]} HP left!")
 
     elif "Recharge" in command:
-        cmd, name, amount = command.split(" - ")
-        amount = int(amount)
-        mp_received = MAX_MP - heroes[name][MP]
-        heroes[name][MP] += amount
-        if heroes[name][MP] > MAX_MP:
-            heroes[name][MP] = MAX_MP
-            amount = mp_received
-        print(f"{name} recharged for {amount} MP!")
+        recharge_or_heal(command, heroes, "recharged", MP)
 
     elif "Heal" in command:
-        cmd, name, amount = command.split(" - ")
-        amount = int(amount)
-        hp_received = MAX_HP - heroes[name][HP]
-        heroes[name][HP] += amount
-        if heroes[name][HP] > MAX_HP:
-            heroes[name][HP] = MAX_HP
-            amount = hp_received
-        print(f"{name} healed for {amount} HP!")
+        recharge_or_heal(command, heroes, "healed", HP)
     command = input()
 
 for hero, stats in heroes.items():
