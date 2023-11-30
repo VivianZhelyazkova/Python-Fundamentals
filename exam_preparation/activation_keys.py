@@ -1,5 +1,4 @@
 raw_key = input()
-
 command = input()
 
 while command != "Generate":
