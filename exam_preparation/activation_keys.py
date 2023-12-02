@@ -27,7 +27,6 @@ while command != "Generate":
         part_to_delete = raw_key[start_index:end_index]
         raw_key = raw_key.replace(part_to_delete, "")
         print(raw_key)
-
     command = input()
 
 print(f"Your activation key is: {raw_key}")
