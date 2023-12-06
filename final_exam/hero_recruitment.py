@@ -2,7 +2,6 @@ command = input()
 heroes = {}
 
 
-
 while command != "End":
     if "Enroll" in command:
         cmd, hero_name = command.split()
